@@ -13,10 +13,10 @@ TWITTER_AUTH.set_access_token(getenv('TWITTER_ACCESS_TOKEN'),
                               getenv('TWITTER_ACCESS_TOKEN_SECRET'))
 TWITTER = tweepy.API(TWITTER_AUTH)
 # Load SpaCy pre-trained model
-nlp = spacy.load('spacy_md_model')
+nlp = spacy.load('spacy_small_model')
 
 def vectorize_tweet(nlp, tweet_text):
-    '''This function returns the SpaCy embeddings for an input text'''
+    '''This function returns the Spacy embeddings for an input text'''
     return list(nlp(tweet_text).vector)
 def add_user_tweepy(username):
     '''Add a user and their tweets to database'''
